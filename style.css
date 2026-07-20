@@ -253,3 +253,201 @@ bottom:-42px;
 }
 
 }
+/* ==========================================================
+   LINEN DRAPE
+========================================================== */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:42vw;
+    height:42vw;
+
+    max-width:700px;
+    max-height:700px;
+
+    top:-18%;
+    left:-12%;
+
+    border-radius:48%;
+
+    background:
+
+    radial-gradient(
+        circle at 35% 35%,
+        rgba(255,255,255,.95),
+        rgba(240,235,227,.88)
+    );
+
+    opacity:.88;
+
+    transform:rotate(-18deg);
+
+    filter:
+        blur(2px)
+        drop-shadow(0 35px 45px rgba(0,0,0,.12));
+
+    z-index:3;
+
+}
+
+/* ==========================================================
+   BOTANICAL PLACEHOLDERS
+   (Real artwork comes later)
+========================================================== */
+
+.botanical{
+
+    position:absolute;
+
+    z-index:6;
+
+    pointer-events:none;
+
+    opacity:.92;
+
+}
+
+.botanical-top-left{
+
+    width:300px;
+    height:300px;
+
+    left:-40px;
+    top:-20px;
+
+}
+
+.botanical-top-right{
+
+    width:320px;
+    height:320px;
+
+    right:-45px;
+    top:-15px;
+
+}
+
+.botanical-bottom-left{
+
+    width:360px;
+    height:360px;
+
+    left:-70px;
+    bottom:-80px;
+
+}
+
+.botanical-bottom-right{
+
+    width:380px;
+    height:380px;
+
+    right:-70px;
+    bottom:-90px;
+
+}
+
+/* ==========================================================
+   ENVELOPE FLOAT
+========================================================== */
+
+.envelope{
+
+    animation:floatEnvelope 8s ease-in-out infinite;
+
+}
+
+@keyframes floatEnvelope{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ==========================================================
+   LIGHT GLOW
+========================================================== */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:4;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(255,247,224,.20),
+    transparent 40%),
+
+    radial-gradient(circle at bottom left,
+    rgba(255,239,210,.18),
+    transparent 45%);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+.hero::after{
+
+width:72vw;
+height:72vw;
+
+top:-12%;
+left:-22%;
+
+}
+
+.botanical-top-left,
+.botanical-top-right,
+.botanical-bottom-left,
+.botanical-bottom-right{
+
+transform:scale(.8);
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hero-content{
+
+padding:20px;
+
+}
+
+.tap-text{
+
+letter-spacing:.18em;
+
+}
+
+}
