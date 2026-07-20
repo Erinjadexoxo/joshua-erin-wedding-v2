@@ -451,3 +451,36 @@ letter-spacing:.18em;
 }
 
 }
+/* ==========================================================
+   OPENING STATE
+========================================================== */
+
+.opening .wax-seal{
+
+    transform:
+    translate(-50%,-120%)
+    scale(.72)
+    rotate(-18deg);
+
+    opacity:0;
+
+    transition:1.2s ease;
+
+}
+
+.opening .envelope{
+
+    transform:
+    translateY(-18px);
+
+    transition:1.2s ease;
+
+}
+
+.opening .tap-text{
+
+    opacity:0;
+
+    transition:.6s ease;
+
+}
