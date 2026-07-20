@@ -1,66 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua & Erin</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>Joshua & Erin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="hero-scene">
+<section class="hero">
 
-    <!-- Wooden Table -->
-    <div class="table"></div>
+    <div class="hero-overlay"></div>
 
-    <!-- Linen -->
-    <div class="linen"></div>
+    <img class="wood" src="assets/images/wood-background.png" alt="Wood Table">
 
-    <!-- Botanical Frame -->
-    <div class="botanical botanical-top-left"></div>
-    <div class="botanical botanical-top-right"></div>
-    <div class="botanical botanical-bottom-left"></div>
-    <div class="botanical botanical-bottom-right"></div>
-
-    <!-- Envelope -->
-
-    <div class="envelope-wrapper">
-
-        <div class="envelope-shadow"></div>
+    <div class="hero-content">
 
         <div class="envelope">
 
-            <div class="envelope-back"></div>
+            <img src="assets/images/envelope.png" class="envelope-image" alt="Envelope">
 
-            <div class="envelope-flap"></div>
-
-            <div class="wax-seal" id="seal">
-                J&E
-            </div>
+            <img src="assets/images/sage-wax-seal.PNG" class="wax-seal" id="seal" alt="Wax Seal">
 
             <div class="tap-text">
-                Tap the seal
+                Tap the Seal
             </div>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
