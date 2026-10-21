@@ -568,3 +568,21 @@ h2 {
     margin-top: -4px;
   }
 }
+
+/* Larger, elegant opening instruction */
+
+.open-instruction {
+  font-size: 18px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 6px;
+}
+
+@media (max-width: 700px) {
+  .open-instruction {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    margin-top: 5px;
+  }
+}
