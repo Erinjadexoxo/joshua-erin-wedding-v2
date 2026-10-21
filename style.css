@@ -756,10 +756,17 @@ h2 {
 
 /* Invitation rises from inside */
 
+
+.envelope.is-opening .letter {
+  visibility: visible;
+}
+
 .envelope.letter-rising .letter {
   visibility: visible;
   transform: translateY(-105%);
   transition-delay: 0s;
+}
+
 }
 
 /* Keep front pocket in front of the letter */
