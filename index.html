@@ -3,28 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f6f2eb">
-  <title>Joshua &amp; Erin — Wedding Invitation</title>
+  <meta name="theme-color" content="#352819">
+
+  <title>Joshua & Erin | Wedding Invitation</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <main>
-    <section class="hero" aria-label="Joshua and Erin's wedding invitation">
+  <!-- OPENING ENVELOPE SCREEN -->
+  <section id="opening" class="opening">
 
-      <div class="wood-background" aria-hidden="true"></div>
+    <img
+      src="assets/images/opening-scene.png"
+      alt="Ivory wedding envelope on a rustic wooden table"
+      class="opening-image"
+    >
 
-      <div class="hero-wrapper">
-        <img
-          src="assets/images/hero-composition.PNG"
-          class="hero-image"
-          alt="Wedding botanicals and linen"
-        >
+    <!-- Clickable wax seal -->
+    <button
+      id="waxSeal"
+      class="wax-seal-button"
+      type="button"
+      aria-label="Open Joshua and Erin's wedding invitation"
+    ></button>
+
+  </section>
+
+
+  <!-- MAIN WEDDING INVITATION -->
+  <main id="invitation" class="invitation" hidden>
+
+    <section class="invitation-hero">
+
+      <img
+        src="assets/images/invitation-scene.png"
+        alt="Joshua and Erin wedding invitation, 15 November 2026"
+        class="invitation-image"
+      >
+
+      <a href="#wedding-details" class="scroll-cue">
+        Explore our wedding
+        <span aria-hidden="true">↓</span>
+      </a>
+
+    </section>
+
+
+    <!-- WEDDING DETAILS -->
+    <section id="wedding-details" class="wedding-details">
+
+      <div class="section-heading">
+        <span class="eyebrow">The celebration</span>
+        <h2>Wedding Details</h2>
+        <p>15 November 2026</p>
+      </div>
+
+      <div class="details-grid">
+
+        <article class="detail">
+          <span class="ornament">❧</span>
+          <h3>The Ceremony</h3>
+          <p>Details to follow</p>
+        </article>
+
+        <article class="detail">
+          <span class="ornament">❧</span>
+          <h3>The Reception</h3>
+          <p>Details to follow</p>
+        </article>
+
+        <article class="detail">
+          <span class="ornament">❧</span>
+          <h3>Dress Code</h3>
+          <p>Formal</p>
+        </article>
+
       </div>
 
     </section>
+
+
+    <!-- ACCOMMODATION -->
+    <section class="info-section" id="accommodation">
+      <span class="eyebrow">Stay with us</span>
+      <h2>Accommodation</h2>
+      <p>Accommodation information will be shared soon.</p>
+    </section>
+
+
+    <!-- LOCATION -->
+    <section class="info-section" id="location">
+      <span class="eyebrow">Find your way</span>
+      <h2>Location</h2>
+      <p>Venue and directions to follow.</p>
+    </section>
+
+
+    <!-- RSVP -->
+    <section class="rsvp-section" id="rsvp">
+      <span class="eyebrow">We hope you can join us</span>
+      <h2>Kindly RSVP</h2>
+      <p>RSVP details will be available soon.</p>
+    </section>
+
+
+    <!-- CLOSING -->
+    <footer class="wedding-footer">
+      <p>We can't wait to celebrate with you</p>
+      <h2>J <span>&</span> E</h2>
+      <p>15 November 2026</p>
+    </footer>
+
   </main>
 
-  <script src="script.js"></script>
+
+  <!-- OPENING INTERACTION -->
+  <script>
+    const seal = document.getElementById("waxSeal");
+    const opening = document.getElementById("opening");
+    const invitation = document.getElementById("invitation");
+
+    seal.addEventListener("click", function () {
+      if (seal.disabled) return;
+
+      seal.disabled = true;
+      opening.classList.add("opening-out");
+
+      setTimeout(function () {
+        invitation.hidden = false;
+        opening.hidden = true;
+        document.body.classList.add("invitation-open");
+        window.scrollTo(0, 0);
+      }, 850);
+    });
+  </script>
+
 </body>
 </html>
