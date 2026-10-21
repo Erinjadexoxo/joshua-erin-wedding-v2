@@ -497,3 +497,36 @@ h2 {
     gap: 20px;
   }
 }
+
+/* FINAL OPENING SCREEN REFINEMENTS */
+
+/* Keep the envelope at its current size */
+.envelope {
+  width: min(94vw, 900px);
+}
+
+/* Raise the wax seal slightly */
+.seal-button {
+  top: 58%;
+  width: 21%;
+}
+
+/* Bring the instruction closer to the envelope */
+.envelope-scene {
+  gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .envelope {
+    width: 94vw;
+  }
+
+  .seal-button {
+    top: 58%;
+    width: 21%;
+  }
+
+  .envelope-scene {
+    gap: 12px;
+  }
+}
