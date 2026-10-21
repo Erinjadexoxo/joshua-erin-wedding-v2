@@ -470,24 +470,30 @@ h2 {
   }
 }
 
-/* Larger envelope and raised wax seal */
+/* FINAL ENVELOPE SIZE AND SEAL POSITION */
 
 .envelope {
-  width: min(92vw, 700px);
+  width: min(94vw, 900px);
+  max-height: 68svh;
 }
 
 .seal-button {
-  top: 64%;
-  width: 15%;
+  top: 62%;
+  width: 21%;
 }
 
 @media (max-width: 700px) {
   .envelope {
-    width: min(94vw, 520px);
+    width: 94vw;
+    max-height: 58svh;
   }
 
   .seal-button {
-    top: 64%;
-    width: 17%;
+    top: 62%;
+    width: 21%;
+  }
+
+  .envelope-scene {
+    gap: 20px;
   }
 }
