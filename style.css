@@ -640,3 +640,173 @@ h2 {
     margin-top: -20px !important;
   }
 }
+
+/* =====================================
+   NEW ENVELOPE OPENING ANIMATION
+   Version 15
+===================================== */
+
+/* Ivory interior visible when flap opens */
+
+.envelope-interior {
+  position: absolute;
+  z-index: 1;
+  inset: 2%;
+
+  background: #f0e1ca;
+  border: 1px solid #d5bea0;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* Actual invitation card */
+
+.envelope .letter {
+  display: flex !important;
+
+  position: absolute;
+  z-index: 2;
+
+  top: 8%;
+  left: 9%;
+
+  width: 82%;
+  height: 76%;
+
+  padding: 20px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  background: #fbf5ea;
+  border: 1px solid #d8c6ae;
+
+  box-shadow:
+    0 3px 10px rgba(30, 20, 10, .12);
+
+  text-align: center;
+
+  opacity: 1;
+  visibility: hidden;
+
+  transform: translateY(15%);
+
+  transition:
+    transform 1.7s cubic-bezier(.22, 1, .36, 1),
+    visibility 0s linear 1.25s;
+}
+
+/* Typography on the little invitation */
+
+.letter-eyebrow,
+.letter-date {
+  font-size: clamp(8px, 1vw, 13px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #68604e;
+}
+
+.letter-names {
+  font-size: clamp(22px, 3.5vw, 44px);
+  font-weight: normal;
+  color: #596047;
+  line-height: 1.2;
+}
+
+.letter-names i {
+  color: #aa906b;
+  font-weight: normal;
+}
+
+/* Hide the interior behind the pocket
+   while the envelope is closed */
+
+.envelope-interior {
+  visibility: hidden;
+}
+
+/* Reveal the interior once the flap lifts */
+
+.envelope.is-opening .envelope-interior {
+  visibility: visible;
+  transition-delay: .5s;
+}
+
+/* Flap opens backwards */
+
+.envelope.is-opening .envelope-flap {
+  transform: rotateX(180deg);
+  transition-delay: .3s;
+}
+
+/* Seal lifts away */
+
+.envelope.is-opening .seal-button {
+  opacity: 0;
+  transform: translate(-50%, -70%) scale(.85);
+  pointer-events: none;
+}
+
+/* Invitation rises from inside */
+
+.envelope.letter-rising .letter {
+  visibility: visible;
+  transform: translateY(-105%);
+  transition-delay: 0s;
+}
+
+/* Keep front pocket in front of the letter */
+
+.envelope-body {
+  z-index: 3;
+}
+
+/* Keep flap above the letter when closed */
+
+.envelope-flap {
+  z-index: 5;
+}
+
+/* Fade opening scene after card emerges */
+
+.opening-out {
+  animation: openingFade .8s ease forwards;
+}
+
+@keyframes openingFade {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Mobile invitation card typography */
+
+@media (max-width: 700px) {
+  .envelope .letter {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .letter-eyebrow,
+  .letter-date {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .letter-names {
+    font-size: clamp(15px, 4vw, 25px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope .letter {
+    transition-duration: .01ms;
+  }
+}
