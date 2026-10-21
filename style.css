@@ -469,3 +469,25 @@ h2 {
     animation-duration: .01ms;
   }
 }
+
+/* Larger envelope and raised wax seal */
+
+.envelope {
+  width: min(92vw, 700px);
+}
+
+.seal-button {
+  top: 64%;
+  width: 15%;
+}
+
+@media (max-width: 700px) {
+  .envelope {
+    width: min(94vw, 520px);
+  }
+
+  .seal-button {
+    top: 64%;
+    width: 17%;
+  }
+}
