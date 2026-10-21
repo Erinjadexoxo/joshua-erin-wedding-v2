@@ -828,3 +828,29 @@ h2 {
   visibility: visible !important;
   transform: translateY(-105%) !important;
 }
+
+/* SLOW, ELEGANT ENVELOPE ANIMATION */
+
+/* Wax seal gently lifts away */
+.envelope.is-opening .seal-button {
+  opacity: 0;
+  transform: translate(-50%, -85%) scale(0.9);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+/* Flap waits for the seal, then opens slowly */
+.envelope.is-opening .envelope-flap {
+  transform: rotateX(180deg);
+  transition:
+    transform 2s cubic-bezier(.45, 0, .2, 1);
+  transition-delay: 1s;
+}
+
+/* Invitation slides out gently */
+.envelope .letter {
+  transition:
+    transform 2.4s cubic-bezier(.22, 1, .36, 1),
+    visibility 0s !important;
+}
