@@ -817,3 +817,14 @@ h2 {
     transition-duration: .01ms;
   }
 }
+
+/* FIX: Show invitation card when envelope opens */
+
+.envelope.is-opening .letter {
+  visibility: visible !important;
+}
+
+.envelope.letter-rising .letter {
+  visibility: visible !important;
+  transform: translateY(-105%) !important;
+}
