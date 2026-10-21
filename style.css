@@ -530,3 +530,16 @@ h2 {
     gap: 12px;
   }
 }
+
+/* Bring the opening instruction closer to the envelope */
+
+.open-instruction {
+  position: relative;
+  transform: translateY(-40px);
+}
+
+@media (max-width: 700px) {
+  .open-instruction {
+    transform: translateY(-22px);
+  }
+}
