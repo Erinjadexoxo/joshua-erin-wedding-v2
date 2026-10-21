@@ -3,115 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#392b20">
+  <meta name="theme-color" content="#4a3020">
   <title>Joshua & Erin | 5 November 2027</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="assets/images/wood-background.png">
+  <link rel="preload" as="image" href="assets/images/envelope-body.png">
+  <link rel="preload" as="image" href="assets/images/envelope-flap.png">
+  <link rel="preload" as="image" href="assets/images/wax-seal.png">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
-
 <body>
 
-  <!-- ENVELOPE OPENING SCREEN -->
   <section class="opening" id="opening">
-
     <div class="envelope-scene">
 
       <div class="envelope" id="envelope">
 
-        <!-- Invitation card behind the envelope -->
+        <!-- Paper inside the envelope -->
         <div class="letter" aria-hidden="true">
           <span>Together with their families</span>
           <strong>Joshua <i>&</i> Erin</strong>
           <span>5 November 2027</span>
         </div>
 
-        <!-- Envelope body -->
+        <!-- The envelope pocket -->
         <img
           class="envelope-body"
           src="assets/images/envelope-body.png"
           alt=""
         >
 
-        <!-- Folding flap -->
+        <!-- The separate folding flap -->
         <img
           class="envelope-flap"
           src="assets/images/envelope-flap.png"
           alt=""
         >
 
-        <!-- Clickable wax seal -->
+        <!-- Wax seal -->
         <button
           class="seal-button"
           id="waxSeal"
           type="button"
-          aria-label="Open the wedding invitation"
+          aria-label="Open Joshua and Erin's wedding invitation"
         >
-          <img
-            src="assets/images/wax-seal.png"
-            alt=""
-          >
+          <img src="assets/images/wax-seal.png" alt="">
         </button>
 
       </div>
 
-      <p class="open-instruction">
-        Tap the seal to open
-      </p>
-
+      <p class="open-instruction">Tap the seal to open</p>
     </div>
-
   </section>
 
-
-  <!-- SCROLLABLE INVITATION -->
   <main id="invitation" class="invitation" hidden>
 
     <section class="invitation-hero">
-
       <div class="invitation-content">
-
         <p class="invitation-eyebrow">
           Together with their families
         </p>
 
-        <h1>
-          Joshua
-          <span>and</span>
-          Erin
-        </h1>
+        <h1>Joshua <span>and</span> Erin</h1>
 
         <p class="invitation-subtitle">
           Invite you to celebrate their wedding
         </p>
 
-        <p class="wedding-date">
-          5 November 2027
-        </p>
+        <p class="wedding-date">5 November 2027</p>
 
         <p class="invitation-message">
           We joyfully invite you to share in our love
           and the beginning of our next adventure together.
         </p>
-
       </div>
 
-      <a href="#wedding-details" class="scroll-cue">
+      <a class="scroll-cue" href="#wedding-details">
         Scroll to explore
         <span aria-hidden="true">⌄</span>
       </a>
-
     </section>
 
-
-    <!-- FUTURE WEDDING DETAILS -->
     <section class="wedding-details" id="wedding-details">
-
-      <div class="section-heading">
-        <span class="eyebrow">Our celebration</span>
-        <h2>Wedding Details</h2>
-      </div>
+      <span class="eyebrow">Our celebration</span>
+      <h2>Wedding Details</h2>
 
       <div class="details-grid">
-
         <article class="detail">
           <span class="ornament">❧</span>
           <h3>The Ceremony</h3>
@@ -126,9 +102,7 @@
           <span class="ornament">❧</span>
           <h3>Dress Code</h3>
         </article>
-
       </div>
-
     </section>
 
     <section class="info-section" id="accommodation">
@@ -155,7 +129,6 @@
 
   </main>
 
-
   <script>
     const seal = document.getElementById("waxSeal");
     const envelope = document.getElementById("envelope");
@@ -168,14 +141,13 @@
 
       envelope.classList.add("is-opening");
 
-      // Allow the flap and letter to animate first.
       setTimeout(() => {
         opening.classList.add("opening-out");
       }, 2300);
 
       setTimeout(() => {
-        opening.hidden = true;
         invitation.hidden = false;
+        opening.hidden = true;
         window.scrollTo(0, 0);
       }, 3100);
     });
