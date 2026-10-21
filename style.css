@@ -1,125 +1,330 @@
-/* RESET */
+/* JOSHUA & ERIN — WEDDING WEBSITE */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --ivory: #f5eee3;
+  --paper: #eee3d2;
+  --sage: #85866a;
+  --olive: #52573f;
+  --gold: #a98b5e;
+  --ink: #3c382c;
 }
 
-html{
-    scroll-behavior:smooth;
+* {
+  box-sizing: border-box;
 }
 
-body{
-
-    background:#f6f2eb;
-    overflow-x:hidden;
-    font-family:Georgia, serif;
-
+html {
+  scroll-behavior: smooth;
 }
 
-
-/* HERO */
-
-.hero{
-
-    position:relative;
-
-    width:100%;
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
 }
 
-
-/* WOOD */
-
-.wood-background{
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:url("assets/images/wood-background.png");
-
-    background-size:cover;
-
-    background-position:center;
-
-    transform:scale(1.05);
-
+[hidden] {
+  display: none !important;
 }
 
+/* OPENING ENVELOPE */
 
-/* DARK OVERLAY */
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(30,20,10,.20);
-
+.opening {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #352819;
+  overflow: hidden;
 }
 
-
-/* HERO ARTWORK */
-
-.hero-wrapper{
-
-    position:relative;
-
-    width:min(88vw,900px);
-
-    z-index:2;
-
-    animation:fadeUp 1.4s ease;
-
+.opening-image {
+  display: block;
+  width: 100%;
+  height: 100svh;
+  object-fit: cover;
+  object-position: center;
 }
 
+/* Invisible clickable area positioned
+   over the wax seal in the artwork */
 
-.hero-image{
-
-    width:100%;
-
-    display:block;
-
-    filter:
-
-        drop-shadow(0 35px 70px rgba(0,0,0,.35));
-
+.wax-seal-button {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(65px, 12vw, 130px);
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.wax-seal-button:focus-visible {
+  outline: 3px solid #fff5db;
+  outline-offset: 5px;
+}
 
-/* ANIMATION */
+.opening-out {
+  animation: openingFade 850ms ease-in-out forwards;
+}
 
-@keyframes fadeUp{
+@keyframes openingFade {
+  to {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+}
 
-    from{
+/* MAIN INVITATION */
 
-        opacity:0;
+.invitation {
+  background: var(--ivory);
+  animation: invitationAppear 1.2s ease both;
+}
 
-        transform:translateY(50px);
+@keyframes invitationAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    }
+.invitation-hero {
+  position: relative;
+  width: 100%;
+  background: #e8dfd0;
+}
 
-    to{
+.invitation-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-        opacity:1;
+/* Scroll prompt */
 
-        transform:translateY(0);
+.scroll-cue {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--olive);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
 
-    }
+.scroll-cue span {
+  font-size: 24px;
+  animation: arrowFloat 2.5s ease-in-out infinite;
+}
 
+@keyframes arrowFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
+/* WEDDING DETAILS */
+
+.wedding-details {
+  padding: 80px 24px;
+  text-align: center;
+  background:
+    linear-gradient(
+      180deg,
+      #f1e8dc,
+      #faf6ef
+    );
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 12px 0 20px;
+}
+
+.section-heading p {
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.details-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.detail {
+  padding: 18px 24px;
+}
+
+.detail + .detail {
+  border-left: 1px solid #d9cbb8;
+}
+
+.ornament {
+  font-size: 29px;
+  color: var(--sage);
+}
+
+.detail h3 {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.detail p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ADDITIONAL SECTIONS */
+
+.info-section,
+.rsvp-section {
+  padding: 90px 24px;
+  text-align: center;
+}
+
+.info-section {
+  background: #faf6ef;
+}
+
+.info-section:nth-of-type(even) {
+  background: #eee5d8;
+}
+
+.info-section p,
+.rsvp-section p {
+  max-width: 550px;
+  margin: auto;
+  line-height: 1.9;
+}
+
+.rsvp-section {
+  background: #e8e3d5;
+}
+
+/* FOOTER */
+
+.wedding-footer {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e8dfd0;
+}
+
+.wedding-footer p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wedding-footer h2 {
+  color: var(--olive);
+  font-size: 55px;
+}
+
+.wedding-footer h2 span {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .opening-image {
+    object-fit: contain;
+    height: auto;
+    max-height: 100svh;
+  }
+
+  .opening {
+    min-height: 100svh;
+  }
+
+  .wax-seal-button {
+    top: 38%;
+    width: 19vw;
+    min-width: 58px;
+    max-width: 90px;
+  }
+
+  .wedding-details {
+    padding: 65px 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .detail {
+    padding: 26px 12px;
+  }
+
+  .detail + .detail {
+    border-left: none;
+    border-top: 1px solid #d9cbb8;
+  }
+
+  .scroll-cue {
+    font-size: 8px;
+    bottom: 1%;
+  }
+
+  .info-section,
+  .rsvp-section {
+    padding: 75px 24px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .opening-out,
+  .invitation,
+  .scroll-cue span {
+    animation: none;
+  }
 }
