@@ -586,3 +586,21 @@ h2 {
     margin-top: 5px;
   }
 }
+
+/* LARGE OPENING INSTRUCTION */
+
+.opening .envelope-scene .open-instruction {
+  font-size: 26px !important;
+  letter-spacing: 4px !important;
+  line-height: 1.4;
+  font-weight: 500;
+  margin-top: 8px;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .opening .envelope-scene .open-instruction {
+    font-size: 20px !important;
+    letter-spacing: 2px !important;
+  }
+}
