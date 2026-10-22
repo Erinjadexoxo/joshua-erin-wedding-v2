@@ -854,3 +854,13 @@ h2 {
     transform 2.4s cubic-bezier(.22, 1, .36, 1),
     visibility 0s !important;
 }
+
+/* KEEP THE IVORY INTERIOR WITHIN THE ENVELOPE */
+
+.envelope-interior {
+  inset: 5% 3% 5% 3% !important;
+  border: none !important;
+  border-radius: 4px;
+  background: #efe0ca !important;
+  box-shadow: none !important;
+}
