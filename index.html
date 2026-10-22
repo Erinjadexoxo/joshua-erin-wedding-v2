@@ -180,37 +180,40 @@
 
   </main>
 
-  <script>
-    const seal = document.getElementById("waxSeal");
-    const envelope = document.getElementById("envelope");
-    const opening = document.getElementById("opening");
-    const invitation = document.getElementById("invitation");
 
-    seal.addEventListener("click", () => {
-      if (seal.disabled) return;
+<script>
+  const seal = document.getElementById("waxSeal");
+  const envelope = document.getElementById("envelope");
+  const opening = document.getElementById("opening");
+  const invitation = document.getElementById("invitation");
 
-      seal.disabled = true;
+  seal.addEventListener("click", () => {
+    if (seal.disabled) return;
 
-      // First: the seal lifts and flap opens
-      envelope.classList.add("is-opening");
+    seal.disabled = true;
 
-      // Then: the invitation card slides out
-      setTimeout(() => {
-        envelope.classList.add("letter-rising");
-      }, 1250);
+    // 1. Wax seal lifts away.
+    // 2. Envelope flap opens slowly.
+    envelope.classList.add("is-opening");
 
-      // Finally: transition to the website
-      setTimeout(() => {
-        invitation.hidden = false;
-        opening.classList.add("opening-out");
-      }, 3500);
+    // 3. Invitation begins sliding out.
+    setTimeout(() => {
+      envelope.classList.add("letter-rising");
+    }, 3300);
 
-      setTimeout(() => {
-        opening.hidden = true;
-        window.scrollTo(0, 0);
-      }, 4300);
-    });
-  </script>
+    // 4. Transition to the wedding website.
+    setTimeout(() => {
+      invitation.hidden = false;
+      opening.classList.add("opening-out");
+    }, 6500);
+
+    // 5. Finish transition.
+    setTimeout(() => {
+      opening.hidden = true;
+      window.scrollTo(0, 0);
+    }, 7300);
+  });
+</script>
 
 </body>
 </html>
