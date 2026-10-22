@@ -622,3 +622,19 @@ h2 {
 @media (max-width: 700px) {
   .envelope .letter { gap: 3px; padding: 5px; }
 }
+
+/* FIX: Plain ivory backing fits inside envelope */
+
+.envelope .envelope-interior {
+  position: absolute !important;
+  top: 8% !important;
+  left: 5% !important;
+  width: 90% !important;
+  height: 72% !important;
+  inset: auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #efe0ca !important;
+  transform: none !important;
+}
