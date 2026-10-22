@@ -638,3 +638,22 @@ h2 {
   background: #efe0ca !important;
   transform: none !important;
 }
+
+/* Fitted envelope backing — replaces oversized rectangle */
+
+.envelope .envelope-interior {
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  background: url("assets/images/envelope-interior-fitted.png")
+    center / 100% 100% no-repeat !important;
+
+  clip-path: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
