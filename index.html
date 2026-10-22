@@ -8,22 +8,13 @@
 
   <title>Joshua & Erin | 5 November 2027</title>
 
-  <link rel="preload" as="image"
-        href="assets/images/wood-background.png">
+  <link rel="preload" as="image" href="assets/images/wood-background.png">
+  <link rel="preload" as="image" href="assets/images/closed-envelope-1659x948-transparent.png">
+  <link rel="preload" as="image" href="assets/images/open-envelope-1659x948-transparent.png">
+  <link rel="preload" as="image" href="assets/images/wax-seal.png">
+  <link rel="preload" as="image" href="assets/images/invitation-background.png">
 
-  <link rel="preload" as="image"
-        href="assets/images/envelope-body.png">
-
-  <link rel="preload" as="image"
-        href="assets/images/envelope-flap.png">
-
-  <link rel="preload" as="image"
-        href="assets/images/wax-seal.png">
-
-  <link rel="preload" as="image"
-        href="assets/images/invitation-background.png">
-
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 
 <body>
@@ -31,23 +22,18 @@
   <!-- OPENING SCENE -->
 
   <section class="opening" id="opening">
-
     <div class="envelope-scene">
 
       <div class="envelope" id="envelope">
 
-        <!-- Ivory interior behind the pocket -->
-        <div class="envelope-interior"
-             aria-hidden="true"></div>
-
-        <!-- Invitation card tucked inside -->
+        <!-- Invitation card -->
         <div class="letter" aria-hidden="true">
           <span class="letter-eyebrow">
             Together with their families
           </span>
 
           <strong class="letter-names">
-            Joshua <i>&</i> Erin
+            Joshua <i>&amp;</i> Erin
           </strong>
 
           <span class="letter-date">
@@ -55,31 +41,28 @@
           </span>
         </div>
 
-        <!-- Front envelope pocket -->
+        <!-- Open envelope image -->
         <img
-          class="envelope-body"
-          src="assets/images/envelope-body.png"
+          class="envelope-open"
+          src="assets/images/open-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- Folding triangular flap -->
+        <!-- Closed envelope image -->
         <img
-          class="envelope-flap"
-          src="assets/images/envelope-flap-aligned.png"
+          class="envelope-closed"
+          src="assets/images/closed-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- Wax seal -->
+        <!-- J&E wax seal -->
         <button
           class="seal-button"
           id="waxSeal"
           type="button"
           aria-label="Open Joshua and Erin's wedding invitation"
         >
-          <img
-            src="assets/images/wax-seal.png"
-            alt=""
-          >
+          <img src="assets/images/wax-seal.png" alt="">
         </button>
 
       </div>
@@ -89,10 +72,9 @@
       </p>
 
     </div>
-
   </section>
 
-  <!-- SCROLLABLE INVITATION -->
+  <!-- SCROLLABLE WEDDING INVITATION -->
 
   <main class="invitation" id="invitation" hidden>
 
@@ -133,6 +115,7 @@
     </section>
 
     <section class="wedding-details" id="wedding-details">
+
       <span class="eyebrow">Our celebration</span>
       <h2>Wedding Details</h2>
 
@@ -174,46 +157,46 @@
 
     <footer class="wedding-footer">
       <p>We can't wait to celebrate with you</p>
-      <h2>J <span>&</span> E</h2>
+      <h2>J <span>&amp;</span> E</h2>
       <p>5 November 2027</p>
     </footer>
 
   </main>
 
+  <!-- ANIMATION -->
 
-<script>
-  const seal = document.getElementById("waxSeal");
-  const envelope = document.getElementById("envelope");
-  const opening = document.getElementById("opening");
-  const invitation = document.getElementById("invitation");
+  <script>
+    const seal = document.getElementById("waxSeal");
+    const envelope = document.getElementById("envelope");
+    const opening = document.getElementById("opening");
+    const invitation = document.getElementById("invitation");
 
-  seal.addEventListener("click", () => {
-    if (seal.disabled) return;
+    seal.addEventListener("click", () => {
+      if (seal.disabled) return;
 
-    seal.disabled = true;
+      seal.disabled = true;
 
-    // 1. Wax seal lifts away.
-    // 2. Envelope flap opens slowly.
-    envelope.classList.add("is-opening");
+      // Lift seal and transition from closed to open envelope
+      envelope.classList.add("is-opening");
 
-    // 3. Invitation begins sliding out.
-    setTimeout(() => {
-      envelope.classList.add("letter-rising");
-    }, 3300);
+      // Slide invitation card upward
+      setTimeout(() => {
+        envelope.classList.add("letter-rising");
+      }, 3300);
 
-    // 4. Transition to the wedding website.
-    setTimeout(() => {
-      invitation.hidden = false;
-      opening.classList.add("opening-out");
-    }, 6500);
+      // Reveal the wedding invitation
+      setTimeout(() => {
+        invitation.hidden = false;
+        opening.classList.add("opening-out");
+      }, 6500);
 
-    // 5. Finish transition.
-    setTimeout(() => {
-      opening.hidden = true;
-      window.scrollTo(0, 0);
-    }, 7300);
-  });
-</script>
+      // Finish opening
+      setTimeout(() => {
+        opening.hidden = true;
+        window.scrollTo(0, 0);
+      }, 7300);
+    });
+  </script>
 
 </body>
 </html>
