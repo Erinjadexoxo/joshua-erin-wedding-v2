@@ -864,3 +864,19 @@ h2 {
   background: #efe0ca !important;
   box-shadow: none !important;
 }
+
+/* Make the invitation card fit inside the envelope */
+
+.envelope .letter {
+  left: 15% !important;
+  width: 70% !important;
+  top: 12% !important;
+  height: 65% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Keep the card tucked inside until it slides out */
+.envelope.letter-rising .letter {
+  transform: translateY(-115%) !important;
+}
