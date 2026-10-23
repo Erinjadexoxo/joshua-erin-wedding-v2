@@ -652,3 +652,26 @@ h2 {
     width: 35%;
   }
 }
+
+/* LETTER READING PAUSE AND SLOW SLIDE */
+
+.envelope .letter {
+  transition:
+    transform 4s cubic-bezier(.45, 0, .55, 1),
+    opacity .35s ease;
+}
+
+/* Show the card at the envelope opening */
+.envelope.letter-visible .letter {
+  visibility: visible;
+  opacity: 1;
+  z-index: 6;
+}
+
+/* Slide only after the reading pause */
+.envelope.letter-rising .letter {
+  visibility: visible;
+  opacity: 1;
+  z-index: 6;
+  transform: translateY(-112%);
+}
