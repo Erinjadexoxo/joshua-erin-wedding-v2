@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@
   <link rel="preload" as="image" href="assets/images/wax-seal.png">
   <link rel="preload" as="image" href="assets/images/invitation-background.png">
 
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 
 <body>
@@ -26,6 +25,7 @@
 
       <div class="envelope" id="envelope">
 
+        <!-- Letter stays hidden until slide begins -->
         <div class="letter" aria-hidden="true">
           <span class="letter-eyebrow">
             Together with their families
@@ -40,25 +40,31 @@
           </span>
         </div>
 
+        <!-- Open envelope -->
         <img
           class="envelope-open"
           src="assets/images/open-envelope-1659x948-transparent.png"
           alt=""
         >
 
+        <!-- Closed envelope -->
         <img
           class="envelope-closed"
           src="assets/images/closed-envelope-1659x948-transparent.png"
           alt=""
         >
 
+        <!-- Wax seal -->
         <button
           class="seal-button"
           id="waxSeal"
           type="button"
           aria-label="Open Joshua and Erin's wedding invitation"
         >
-          <img src="assets/images/wax-seal.png" alt="">
+          <img
+            src="assets/images/wax-seal.png"
+            alt=""
+          >
         </button>
 
       </div>
@@ -70,11 +76,12 @@
     </div>
   </section>
 
-  <!-- WEDDING INVITATION -->
+  <!-- MAIN WEDDING INVITATION -->
 
   <main class="invitation" id="invitation" hidden>
 
     <section class="invitation-hero">
+
       <div class="invitation-content">
 
         <p class="invitation-eyebrow">
@@ -104,10 +111,15 @@
         Scroll to explore
         <span aria-hidden="true">⌄</span>
       </a>
+
     </section>
 
     <section class="wedding-details" id="wedding-details">
-      <span class="eyebrow">Our celebration</span>
+
+      <span class="eyebrow">
+        Our celebration
+      </span>
+
       <h2>Wedding Details</h2>
 
       <div class="details-grid">
@@ -128,6 +140,7 @@
         </article>
 
       </div>
+
     </section>
 
     <section class="info-section" id="accommodation">
@@ -141,7 +154,9 @@
     </section>
 
     <section class="rsvp-section" id="rsvp">
-      <span class="eyebrow">We hope you can join us</span>
+      <span class="eyebrow">
+        We hope you can join us
+      </span>
       <h2>Kindly RSVP</h2>
       <p>RSVP details will be available soon.</p>
     </section>
@@ -154,7 +169,7 @@
 
   </main>
 
-  <!-- ANIMATION TIMING -->
+  <!-- ENVELOPE ANIMATION -->
 
   <script>
     const seal = document.getElementById("waxSeal");
@@ -167,26 +182,23 @@
 
       seal.disabled = true;
 
-      // Begin opening the envelope
+      // Start envelope opening
       envelope.classList.add("is-opening");
+      opening.classList.add("opening-started");
 
-      // Reveal card only after envelope opens
-      setTimeout(() => {
-        envelope.classList.add("letter-visible");
-      }, 3100);
-
-      // Slide card upward
+      // After envelope opens, reveal and slide letter
+      // together — no separate letter-visible stage
       setTimeout(() => {
         envelope.classList.add("letter-rising");
-      }, 3550);
+      }, 3100);
 
-      // Reveal scrollable invitation
+      // Transition to main invitation
       setTimeout(() => {
         invitation.hidden = false;
         opening.classList.add("opening-out");
       }, 6900);
 
-      // Finish opening scene
+      // Remove opening scene
       setTimeout(() => {
         opening.hidden = true;
         window.scrollTo(0, 0);
