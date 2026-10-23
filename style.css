@@ -561,3 +561,94 @@ h2 {
     animation-duration: .01ms;
   }
 }
+
+/* EUCALYPTUS GREEN WEDDING LETTER */
+
+.envelope .letter {
+  background: #354735;
+  background-image:
+    repeating-linear-gradient(
+      35deg,
+      rgba(255,255,255,.018) 0px,
+      rgba(255,255,255,.018) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+
+  border: 1px solid #66735b;
+  color: #f4ebd9;
+
+  box-shadow:
+    0 4px 12px rgba(20,25,16,.25);
+
+  gap: 10px;
+}
+
+.letter-eyebrow {
+  color: #e9dfca;
+  font-family: Georgia, serif;
+  font-size: clamp(7px, 1vw, 12px);
+  font-weight: normal;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.letter-names {
+  color: #f7eedc;
+  font-family: "Brush Script MT", "Snell Roundhand",
+    "Apple Chancery", cursive;
+  font-size: clamp(24px, 4.2vw, 52px);
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.letter-names i {
+  color: #c8aa78;
+  font-weight: normal;
+}
+
+.letter-message {
+  color: #f1e5cf;
+  font-family: Georgia, serif;
+  font-size: clamp(7px, 1vw, 12px);
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.letter-mountain {
+  display: block;
+  width: 42%;
+  max-width: 170px;
+  height: auto;
+  color: #c8aa78;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .envelope .letter {
+    gap: 4px;
+  }
+
+  .letter-eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .letter-names {
+    font-size: clamp(17px, 4.5vw, 30px);
+  }
+
+  .letter-message {
+    font-size: 6px;
+    letter-spacing: .5px;
+    line-height: 1.4;
+  }
+
+  .letter-mountain {
+    width: 35%;
+  }
+}
