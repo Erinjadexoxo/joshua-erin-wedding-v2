@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4a3020">
-
   <title>Joshua & Erin | 5 November 2027</title>
 
   <link rel="preload" as="image" href="assets/images/wood-background.png">
@@ -13,58 +13,46 @@
   <link rel="preload" as="image" href="assets/images/wax-seal.png">
   <link rel="preload" as="image" href="assets/images/invitation-background.png">
 
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 
 <body>
 
-  <!-- ENVELOPE OPENING -->
-
   <section class="opening" id="opening">
     <div class="envelope-scene">
-
       <div class="envelope" id="envelope">
 
-        <!-- Letter stays hidden until slide begins -->
         <div class="letter" aria-hidden="true">
           <span class="letter-eyebrow">
             Together with their families
           </span>
-
           <strong class="letter-names">
             Joshua <i>&amp;</i> Erin
           </strong>
-
           <span class="letter-date">
             5 November 2027
           </span>
         </div>
 
-        <!-- Open envelope -->
         <img
           class="envelope-open"
           src="assets/images/open-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- Closed envelope -->
         <img
           class="envelope-closed"
           src="assets/images/closed-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- Wax seal -->
         <button
           class="seal-button"
           id="waxSeal"
           type="button"
           aria-label="Open Joshua and Erin's wedding invitation"
         >
-          <img
-            src="assets/images/wax-seal.png"
-            alt=""
-          >
+          <img src="assets/images/wax-seal.png" alt="">
         </button>
 
       </div>
@@ -72,25 +60,19 @@
       <p class="open-instruction">
         Tap the seal to open
       </p>
-
     </div>
   </section>
-
-  <!-- MAIN WEDDING INVITATION -->
 
   <main class="invitation" id="invitation" hidden>
 
     <section class="invitation-hero">
-
       <div class="invitation-content">
 
         <p class="invitation-eyebrow">
           Together with their families
         </p>
 
-        <h1>
-          Joshua <span>and</span> Erin
-        </h1>
+        <h1>Joshua <span>and</span> Erin</h1>
 
         <p class="invitation-subtitle">
           Invite you to celebrate their wedding
@@ -111,19 +93,13 @@
         Scroll to explore
         <span aria-hidden="true">⌄</span>
       </a>
-
     </section>
 
     <section class="wedding-details" id="wedding-details">
-
-      <span class="eyebrow">
-        Our celebration
-      </span>
-
+      <span class="eyebrow">Our celebration</span>
       <h2>Wedding Details</h2>
 
       <div class="details-grid">
-
         <article class="detail">
           <span class="ornament">❧</span>
           <h3>The Ceremony</h3>
@@ -138,9 +114,7 @@
           <span class="ornament">❧</span>
           <h3>Dress Code</h3>
         </article>
-
       </div>
-
     </section>
 
     <section class="info-section" id="accommodation">
@@ -154,9 +128,7 @@
     </section>
 
     <section class="rsvp-section" id="rsvp">
-      <span class="eyebrow">
-        We hope you can join us
-      </span>
+      <span class="eyebrow">We hope you can join us</span>
       <h2>Kindly RSVP</h2>
       <p>RSVP details will be available soon.</p>
     </section>
@@ -169,8 +141,6 @@
 
   </main>
 
-  <!-- ENVELOPE ANIMATION -->
-
   <script>
     const seal = document.getElementById("waxSeal");
     const envelope = document.getElementById("envelope");
@@ -179,30 +149,28 @@
 
     seal.addEventListener("click", () => {
       if (seal.disabled) return;
-
       seal.disabled = true;
 
-      // Start envelope opening
+      // Begin soft envelope transition
       envelope.classList.add("is-opening");
       opening.classList.add("opening-started");
 
-      // After envelope opens, reveal and slide letter
-      // together — no separate letter-visible stage
+      // Reveal letter and begin slower slide
       setTimeout(() => {
         envelope.classList.add("letter-rising");
-      }, 3100);
+      }, 2800);
 
-      // Transition to main invitation
+      // Transition as soon as letter finishes
       setTimeout(() => {
         invitation.hidden = false;
         opening.classList.add("opening-out");
-      }, 6900);
+      }, 6300);
 
-      // Remove opening scene
+      // Complete transition
       setTimeout(() => {
         opening.hidden = true;
         window.scrollTo(0, 0);
-      }, 7700);
+      }, 7100);
     });
   </script>
 
