@@ -1,68 +1,110 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4a3020">
+
   <title>Joshua & Erin | 5 November 2027</title>
 
-  <link rel="preload" as="image" href="assets/images/wood-background.png">
-  <link rel="preload" as="image" href="assets/images/closed-envelope-1659x948-transparent.png">
-  <link rel="preload" as="image" href="assets/images/open-envelope-1659x948-transparent.png">
-  <link rel="preload" as="image" href="assets/images/wax-seal.png">
-  <link rel="preload" as="image" href="assets/images/invitation-background.png">
+  <!-- PRELOAD IMAGES -->
 
-  <link rel="stylesheet" href="style.css?v=19">
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/wood-background.png"
+  >
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/closed-envelope-1659x948-transparent.png"
+  >
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/open-envelope-1659x948-transparent.png"
+  >
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/wax-seal.png"
+  >
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/images/invitation-background.png"
+  >
+
+  <link rel="stylesheet" href="style.css?v=20">
+
 </head>
 
 <body>
 
+  <!-- OPENING ENVELOPE SCENE -->
+
   <section class="opening" id="opening">
+
     <div class="envelope-scene">
+
       <div class="envelope" id="envelope">
 
-        
-<div class="letter" aria-hidden="true">
+        <!-- EUCALYPTUS GREEN LETTER -->
 
-  <span class="letter-eyebrow">
-    Together with our families
-  </span>
+        <div class="letter" aria-hidden="true">
 
-  <strong class="letter-names">
-    Joshua <i>&amp;</i> Erin
-  </strong>
+          <span class="letter-eyebrow">
+            Together with our families
+          </span>
 
-  <span class="letter-message">
-    We request the honor of your presence
-    <br>
-    at our wedding celebration
-  </span>
+          <strong class="letter-names">
+            Joshua <i>&amp;</i> Erin
+          </strong>
 
-  <svg
-    class="letter-mountain"
-    viewBox="0 0 240 54"
-    aria-hidden="true"
-  >
-    <path
-      d="M5 44 H57 L89 19 L104 30 L125 7 L153 35 L168 22 L191 44 H235"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M113 21 L125 7 L138 22 M81 28 L89 19 L97 27 M160 31 L168 22 L176 31"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-    />
-  </svg>
+          <span class="letter-message">
+            We request the honor of your presence
+            <br>
+            at our wedding celebration
+          </span>
 
-</div>
+          <!-- MOUNTAIN ILLUSTRATION -->
 
+          <svg
+            class="letter-mountain"
+            viewBox="0 0 240 54"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M5 44 H57 L89 19 L104 30 L125 7 L153 35 L168 22 L191 44 H235"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M113 21 L125 7 L138 22
+                 M81 28 L89 19 L97 27
+                 M160 31 L168 22 L176 31"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+        <!-- OPEN ENVELOPE IMAGE -->
 
         <img
           class="envelope-open"
@@ -70,11 +112,15 @@
           alt=""
         >
 
+        <!-- CLOSED ENVELOPE IMAGE -->
+
         <img
           class="envelope-closed"
           src="assets/images/closed-envelope-1659x948-transparent.png"
           alt=""
         >
+
+        <!-- WAX SEAL BUTTON -->
 
         <button
           class="seal-button"
@@ -82,7 +128,12 @@
           type="button"
           aria-label="Open Joshua and Erin's wedding invitation"
         >
-          <img src="assets/images/wax-seal.png" alt="">
+
+          <img
+            src="assets/images/wax-seal.png"
+            alt=""
+          >
+
         </button>
 
       </div>
@@ -90,19 +141,28 @@
       <p class="open-instruction">
         Tap the seal to open
       </p>
+
     </div>
+
   </section>
+
+  <!-- MAIN SCROLLABLE INVITATION -->
 
   <main class="invitation" id="invitation" hidden>
 
+    <!-- HERO PAGE -->
+
     <section class="invitation-hero">
+
       <div class="invitation-content">
 
         <p class="invitation-eyebrow">
           Together with their families
         </p>
 
-        <h1>Joshua <span>and</span> Erin</h1>
+        <h1>
+          Joshua <span>and</span> Erin
+        </h1>
 
         <p class="invitation-subtitle">
           Invite you to celebrate their wedding
@@ -119,17 +179,31 @@
 
       </div>
 
-      <a class="scroll-cue" href="#wedding-details">
+      <a
+        class="scroll-cue"
+        href="#wedding-details"
+      >
         Scroll to explore
         <span aria-hidden="true">⌄</span>
       </a>
+
     </section>
 
-    <section class="wedding-details" id="wedding-details">
-      <span class="eyebrow">Our celebration</span>
+    <!-- WEDDING DETAILS -->
+
+    <section
+      class="wedding-details"
+      id="wedding-details"
+    >
+
+      <span class="eyebrow">
+        Our celebration
+      </span>
+
       <h2>Wedding Details</h2>
 
       <div class="details-grid">
+
         <article class="detail">
           <span class="ornament">❧</span>
           <h3>The Ceremony</h3>
@@ -144,80 +218,134 @@
           <span class="ornament">❧</span>
           <h3>Dress Code</h3>
         </article>
+
       </div>
+
     </section>
 
-    <section class="info-section" id="accommodation">
-      <span class="eyebrow">Stay with us</span>
+    <!-- ACCOMMODATION -->
+
+    <section
+      class="info-section"
+      id="accommodation"
+    >
+
+      <span class="eyebrow">
+        Stay with us
+      </span>
+
       <h2>Accommodation</h2>
+
     </section>
 
-    <section class="info-section" id="location">
-      <span class="eyebrow">Find your way</span>
+    <!-- LOCATION -->
+
+    <section
+      class="info-section"
+      id="location"
+    >
+
+      <span class="eyebrow">
+        Find your way
+      </span>
+
       <h2>Location</h2>
+
     </section>
 
-    <section class="rsvp-section" id="rsvp">
-      <span class="eyebrow">We hope you can join us</span>
+    <!-- RSVP -->
+
+    <section
+      class="rsvp-section"
+      id="rsvp"
+    >
+
+      <span class="eyebrow">
+        We hope you can join us
+      </span>
+
       <h2>Kindly RSVP</h2>
-      <p>RSVP details will be available soon.</p>
+
+      <p>
+        RSVP details will be available soon.
+      </p>
+
     </section>
+
+    <!-- FOOTER -->
 
     <footer class="wedding-footer">
-      <p>We can't wait to celebrate with you</p>
-      <h2>J <span>&amp;</span> E</h2>
-      <p>5 November 2027</p>
+
+      <p>
+        We can't wait to celebrate with you
+      </p>
+
+      <h2>
+        J <span>&amp;</span> E
+      </h2>
+
+      <p>
+        5 November 2027
+      </p>
+
     </footer>
 
   </main>
 
+  <!-- ENVELOPE ANIMATION SCRIPT -->
+
   <script>
+
     const seal = document.getElementById("waxSeal");
     const envelope = document.getElementById("envelope");
     const opening = document.getElementById("opening");
     const invitation = document.getElementById("invitation");
 
     seal.addEventListener("click", () => {
+
+      // Prevent multiple clicks
       if (seal.disabled) return;
+
       seal.disabled = true;
 
-      // Begin soft envelope transition
+      // 0 seconds:
+      // Begin opening envelope
+
       envelope.classList.add("is-opening");
       opening.classList.add("opening-started");
 
-// Show the green letter after envelope opens
-setTimeout(() => {
-  envelope.classList.add("letter-visible");
-}, 2800);
+      // 2.8 seconds:
+      // Green letter becomes visible
 
-// Wait 2.5 seconds, then slowly slide it upward
-setTimeout(() => {
-  envelope.classList.add("letter-rising");
-}, 5300);
+      setTimeout(() => {
+        envelope.classList.add("letter-visible");
+      }, 2800);
 
-// Fade into the hero scene
-setTimeout(() => {
-  invitation.hidden = false;
-  opening.classList.add("opening-out");
-}, 9300);
+      // 5.3 seconds:
+      // Letter begins slow upward slide
 
-// Finish the transition
-setTimeout(() => {
-  opening.hidden = true;
-  window.scrollTo(0, 0);
-}, 10100);
+      setTimeout(() => {
+        envelope.classList.add("letter-rising");
+      }, 5300);
 
-  
+      // 9.3 seconds:
+      // Transition to hero page
+
+      setTimeout(() => {
         invitation.hidden = false;
         opening.classList.add("opening-out");
-      }, 6300);
+      }, 9300);
 
-      // Complete transition
+      // 10.1 seconds:
+      // Remove envelope scene
+
       setTimeout(() => {
         opening.hidden = true;
         window.scrollTo(0, 0);
-      }, 7100);
+      }, 10100);
+
     });
+
   </script>
 
 </body>
