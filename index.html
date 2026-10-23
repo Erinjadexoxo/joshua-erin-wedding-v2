@@ -185,13 +185,29 @@
       envelope.classList.add("is-opening");
       opening.classList.add("opening-started");
 
-      // Reveal letter and begin slower slide
-      setTimeout(() => {
-        envelope.classList.add("letter-rising");
-      }, 2800);
+// Show the green letter after envelope opens
+setTimeout(() => {
+  envelope.classList.add("letter-visible");
+}, 2800);
 
-      // Transition as soon as letter finishes
-      setTimeout(() => {
+// Wait 2.5 seconds, then slowly slide it upward
+setTimeout(() => {
+  envelope.classList.add("letter-rising");
+}, 5300);
+
+// Fade into the hero scene
+setTimeout(() => {
+  invitation.hidden = false;
+  opening.classList.add("opening-out");
+}, 9300);
+
+// Finish the transition
+setTimeout(() => {
+  opening.hidden = true;
+  window.scrollTo(0, 0);
+}, 10100);
+
+  
         invitation.hidden = false;
         opening.classList.add("opening-out");
       }, 6300);
