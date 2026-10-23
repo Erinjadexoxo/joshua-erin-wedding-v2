@@ -14,19 +14,18 @@
   <link rel="preload" as="image" href="assets/images/wax-seal.png">
   <link rel="preload" as="image" href="assets/images/invitation-background.png">
 
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 
 <body>
 
-  <!-- OPENING SCENE -->
+  <!-- ENVELOPE OPENING -->
 
   <section class="opening" id="opening">
     <div class="envelope-scene">
 
       <div class="envelope" id="envelope">
 
-        <!-- Invitation card -->
         <div class="letter" aria-hidden="true">
           <span class="letter-eyebrow">
             Together with their families
@@ -41,21 +40,18 @@
           </span>
         </div>
 
-        <!-- Open envelope image -->
         <img
           class="envelope-open"
           src="assets/images/open-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- Closed envelope image -->
         <img
           class="envelope-closed"
           src="assets/images/closed-envelope-1659x948-transparent.png"
           alt=""
         >
 
-        <!-- J&E wax seal -->
         <button
           class="seal-button"
           id="waxSeal"
@@ -74,12 +70,11 @@
     </div>
   </section>
 
-  <!-- SCROLLABLE WEDDING INVITATION -->
+  <!-- WEDDING INVITATION -->
 
   <main class="invitation" id="invitation" hidden>
 
     <section class="invitation-hero">
-
       <div class="invitation-content">
 
         <p class="invitation-eyebrow">
@@ -87,9 +82,7 @@
         </p>
 
         <h1>
-          Joshua
-          <span>and</span>
-          Erin
+          Joshua <span>and</span> Erin
         </h1>
 
         <p class="invitation-subtitle">
@@ -111,11 +104,9 @@
         Scroll to explore
         <span aria-hidden="true">⌄</span>
       </a>
-
     </section>
 
     <section class="wedding-details" id="wedding-details">
-
       <span class="eyebrow">Our celebration</span>
       <h2>Wedding Details</h2>
 
@@ -163,7 +154,7 @@
 
   </main>
 
-  <!-- ANIMATION -->
+  <!-- ANIMATION TIMING -->
 
   <script>
     const seal = document.getElementById("waxSeal");
@@ -176,25 +167,30 @@
 
       seal.disabled = true;
 
-      // Lift seal and transition from closed to open envelope
+      // Begin opening the envelope
       envelope.classList.add("is-opening");
 
-      // Slide invitation card upward
+      // Reveal card only after envelope opens
+      setTimeout(() => {
+        envelope.classList.add("letter-visible");
+      }, 3100);
+
+      // Slide card upward
       setTimeout(() => {
         envelope.classList.add("letter-rising");
-      }, 3300);
+      }, 3550);
 
-      // Reveal the wedding invitation
+      // Reveal scrollable invitation
       setTimeout(() => {
         invitation.hidden = false;
         opening.classList.add("opening-out");
-      }, 6500);
+      }, 6900);
 
-      // Finish opening
+      // Finish opening scene
       setTimeout(() => {
         opening.hidden = true;
         window.scrollTo(0, 0);
-      }, 7300);
+      }, 7700);
     });
   </script>
 
