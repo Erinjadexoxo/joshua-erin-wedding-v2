@@ -676,11 +676,3 @@ h2 {
   transform: translateY(-112%);
 }
 
-/* ENVELOPE SIZE ALIGNMENT ONLY */
-
-.envelope-open {
-  width: 108.1%;
-  height: 108.1%;
-  left: -4.05%;
-  top: -6.8%;
-}
